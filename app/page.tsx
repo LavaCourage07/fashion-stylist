@@ -571,7 +571,7 @@ export default function FashionStylist() {
                 >
                   <div className="flex items-center space-x-2">
                     <Sparkles className="w-5 h-5" />
-                    <span>开始我的时尚变身</span>
+                    <span>开始搭配</span>
                   </div>
                 </Button>
               </div>

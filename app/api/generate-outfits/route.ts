@@ -1,5 +1,4 @@
 import { type NextRequest, NextResponse } from "next/server"
-
 export async function POST(request: NextRequest) {
   try {
     const { scenario, gender, style, weather, temperature } = await request.json()
@@ -36,17 +35,18 @@ export async function POST(request: NextRequest) {
   "blessing": "祝福语"
 }`
 
+
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
-        // Authorization: `Bearer ${process.env.OPENROUTER_API_KEY || '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'}`,
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer ${process.env.OPENROUTER_API_KEY || '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'}`,
+        // Authorization: `Bearer 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`,
         "Content-Type": "application/json",
         "HTTP-Referer": "https://fashion-stylist.vercel.app",
         "X-Title": "Fashion Stylist",
       },
       body: JSON.stringify({
-        model: "deepseek/deepseek-chat",
+        model: "deepseek/deepseek-chat-v3-0324:free",
         messages: [
           {
             role: "user",
