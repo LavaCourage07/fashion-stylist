@@ -35,12 +35,11 @@ export async function POST(request: NextRequest) {
   "blessing": "祝福语"
 }`
 
-
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${process.env.OPENROUTER_API_KEY || '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'}`,
-        // Authorization: `Bearer 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`,
+        // Authorization: `Bearer ${process.env.OPENROUTER_API_KEY || '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'}`,
+        Authorization: `Bearer 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`,
         "Content-Type": "application/json",
         "HTTP-Referer": "https://fashion-stylist.vercel.app",
         "X-Title": "Fashion Stylist",

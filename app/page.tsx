@@ -264,6 +264,7 @@ export default function FashionStylist() {
     setShowingOutfits(0)
 
     try {
+      console.log(`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`);
       const response = await fetch("/api/generate-outfits", {
         method: "POST",
         headers: {
@@ -282,6 +283,7 @@ export default function FashionStylist() {
 
       const data = await response.json()
 
+      console.log("从 API 接收到的数据:", data);
       // 检查是否有错误
       if (data.error) {
         alert(data.error)
@@ -571,7 +573,7 @@ export default function FashionStylist() {
                 >
                   <div className="flex items-center space-x-2">
                     <Sparkles className="w-5 h-5" />
-                    <span>开始定制穿搭</span>
+                    <span>开始搭配❤️</span>
                   </div>
                 </Button>
               </div>
