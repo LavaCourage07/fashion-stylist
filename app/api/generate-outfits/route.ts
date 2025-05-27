@@ -39,7 +39,8 @@ export async function POST(request: NextRequest) {
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+        Authorization: `Bearer ${process.env.OPENROUTER_API_KEY || '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'}`,
+        // Authorization: `Bearer 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`,
         "Content-Type": "application/json",
         "HTTP-Referer": "https://fashion-stylist.vercel.app",
         "X-Title": "Fashion Stylist",
